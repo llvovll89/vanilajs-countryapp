@@ -59,7 +59,9 @@ const pushArr = (item) => {
 };
 
 const getAPI = async (item) => {
-  const API_KEY = apiKey;
+  // API_KEY 숨기기,,,,
+  const API_KEY =
+    "urIcbpoTLWxb29j%2Fwpj%2BW0Kit7O7x3D0cuZgu8AmBU53BswjDvNTfzkbeZjILO%2BzvBhsrnS1JcyK80dGJmMsKw%3D%3D";
   const apiURL = `http://apis.data.go.kr/1262000/OverviewKorRelationService/getOverviewKorRelationList?serviceKey=${API_KEY}&pageNo=1&numOfRows=10&cond[country_nm::EQ]=${item}`;
   const response = await fetch(apiURL);
   const json = await response.json();
