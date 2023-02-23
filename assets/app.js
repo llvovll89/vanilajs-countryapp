@@ -39,7 +39,7 @@ function modifyNum(time) {
 
 // 초기화
 const nArr = [];
-countryName.focus();
+// countryName.focus();
 textbox.innerText = "";
 
 // form 이벤트
@@ -110,8 +110,8 @@ const getAPI = async (item) => {
         list.innerHTML = `
             <li class="country_item">
             <p><span>국가명</span> : ${item.country_nm}</p>
-            <p><span>국가코드</span> : ${item.country_iso_alp2}</p>
             <p><span>영문명</span> : ${item.country_eng_nm}</p>
+            <p><span>국가코드</span> : ${item.country_iso_alp2}</p>
             <p><span>투자</span> : ${item.investment_status}</p>
             <p><span>동포</span> : ${item.oks_status}</p>
             <p><span>수교일</span> : ${item.diplomatic_relations}</p>

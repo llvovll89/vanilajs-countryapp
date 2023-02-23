@@ -111,7 +111,7 @@ button {
     background: whitesmoke;
 }
 
-.container::after {
+/* .container::after {
     content: "";
     position: absolute;
     width: 600px;
@@ -121,7 +121,7 @@ button {
     background: #181818;
     z-index: -1;
     border-radius: 20px;
-}
+} */
 
 .container.active {
     background: rgba(241, 235, 235, 0.12);
@@ -182,7 +182,6 @@ button {
 
 .container #form input {
     padding: 12px 20px;
-    font-size: 1.1rem;
     color: #000;
 }
 
@@ -331,14 +330,15 @@ li {
     transform: translate(3%, 3%);
     border-radius: 50%;
     font-size: 0.8px;
-    background: salmon;
+    background: transparent;
     border: 1px solid #ecb9b9;
     transition: 0.3s all linear;
     z-index: 100;
+    box-shadow: 0 1px 1px rgba(241, 235, 235, 0.12);
 }
 
 .delbtn:hover {
-    background: #181818;
+    background: #FFFFFF;
     transition: 0.3s all linear;
 }
 
@@ -372,11 +372,15 @@ li {
 @media screen and (max-width: 500px) {
     .wrap {
         padding: 0 1rem;
+        background: #F7F7F7;
     }
 
     .container {
         gap: 3.5rem;
-        height: 500px;
+        height: 525px;
+        background: #FFFFFF;
+        border-radius: 20px;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 4px 10px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
     }
 
     .container .title {
@@ -386,29 +390,38 @@ li {
     .container .title span {
         padding: 0.65rem;
         display: inline-block;
-        font-size: 1.1rem;
+        font-size: 1rem;
         letter-spacing: 0.05rem;
-        border-bottom: 1.5px solid #999;
+        border-bottom: 1.5px solid #ccc;
+        width: 100%;
+    }
+
+    .list.active {
+        background: #191919;
     }
 
     .textbox {
+        max-width: 90%;
+        width: 525px;
         position: relative;
         padding: 0.7rem;
-        max-width: 100%;
-        width: 560px;
         height: max-content;
         letter-spacing: 0.15rem;
         margin-bottom: 6px;
-        background: #000;
-        color: #FFF;
+        background: #FFFFFF;
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+        color: #9CA7BB;
         border-radius: 20px;
         font-family: var(--korFont);
     }
 
     .textbox span {
         display: inline-block;
+        padding: 0.25rem;
+        border-radius: 12px;
         font-size: 0.75rem;
         line-height: 1.5;
+        /* background: #d7e3f7; */
     }
 
     .textbox .time {
@@ -443,15 +456,32 @@ li {
         font-size: 0.7rem;
     }
 
+    .country_item {
+        width: 100%;
+        height: 100%;
+        padding: 0.5rem;
+        margin: 0.25rem;
+        height: max-content;
+        display: block;
+        z-index: 1000;
+    }
+
     .country_item p {
         background: transparent;
         font-size: 1rem;
         border-radius: 0;
+        font-weight: 500;
+        border-radius: 12px;
+        color: #FFF;
+        text-align: left;
+        border: 1px solid #ccc;
     }
 
     .country_item p span {
-        border-bottom: 0;
+        border-bottom: 1px solid #07f;
         font-size: 0.85rem;
+        color: #07f;
+        font-weight: 700;
     }
 
     .container::after {
@@ -461,7 +491,21 @@ li {
     }
 
     .container .imgbox img {
-        height: 180px;
+        width: 100%;
+        height: 100%;
+    }
+
+    .container #form {
+        gap: 0.5rem;
+    }
+
+    .container #form button,
+    .container #form input {
+        font-size: 0.85rem;
+        border-radius: 3px;
+        height: 42px;
+        width: 100%;
+        background: #F5F5F7;
     }
 
     .delbtn {
@@ -483,18 +527,19 @@ li {
 
     /* effect */
     .effect {
-        width: 3.5px;
-        height: 3.5px;
+        width: 2.5px;
+        height: 2.5px;
+        background: rgba(255, 255, 255, 0.36);
     }
 
     .effect:nth-of-type(2n) {
-        width: 5.5px;
-        height: 5.5px;
+        width: 4.5px;
+        height: 4.5px;
     }
 
     .effect:nth-of-type(2n+1) {
-        width: 4.5px;
-        height: 4.5px;
+        width: 3.5px;
+        height: 3.5px;
     }
 }
 
